@@ -26,7 +26,6 @@ fn main() {
             primary_window: Some(Window {
                 title: "Juego de la Serpiente".to_string(),
                 resolution: (500.0, 500.0).into(),
-                present_mode: bevy::window::PresentMode::Fifo, // VSync para 60 FPS estables
                 ..default()
             }),
             ..default()

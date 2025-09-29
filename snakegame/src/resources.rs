@@ -8,6 +8,9 @@ pub mod config {
     
     /// Velocidad base del juego (segundos entre movimientos)
     pub const VELOCIDAD_BASE: f32 = 0.3;
+
+    /// Tamaño de cada celda (en unidades de Bevy)
+    pub const TAMANO_CELDA: f32 = 20.0;
 }
 
 /// Recurso para controlar el tiempo entre movimientos
