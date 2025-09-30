@@ -7,7 +7,19 @@ pub mod config {
     pub const ALTO_MAPA: i32 = 25;
     
     /// Velocidad base del juego (segundos entre movimientos)
-    pub const VELOCIDAD_BASE: f32 = 0.3;
+    pub const VELOCIDAD_BASE: f32 = 0.15;
+
+    /// Tamaño de cada celda (en unidades de Bevy)
+    pub const TAMANO_CELDA: f32 = 20.0;
+}
+
+/// Estados del juego
+#[derive(States, Debug, Clone, Copy, PartialEq, Eq, Hash, Default)]
+pub enum EstadoJuego {
+    #[default]
+    Jugando,
+    GameOver,
+    Reiniciando,
 }
 
 /// Recurso para controlar el tiempo entre movimientos
@@ -22,5 +34,11 @@ impl Default for TemporizadorMovimiento {
             timer: Timer::from_seconds(config::VELOCIDAD_BASE, TimerMode::Repeating),
         }
     }
+}
+
+/// Recurso para controlar el score
+#[derive(Resource, Default)]
+pub struct Score {
+    pub valor: u32,
 }
 
